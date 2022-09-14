@@ -5,12 +5,10 @@ import matplotlib.pyplot as plt
 def cost_fun(x, y, w, b):
     cost_sum = 0
     m = x.shape[0]
-    for i in range(m):
-        f_wb = w * x[i] + b
-        cost = (f_wb - y[i]) ** 2
-        cost_sum = cost_sum + cost
+    f_wb = w * x + b
+    cost = (f_wb - y) ** 2
+    cost_sum = np.sum(cost)
     total_cost = (1 / (2 * m)) * cost_sum
-    #print(total_cost,m)
     return total_cost
 
 #Initiallize w and b
