@@ -32,6 +32,7 @@ while (dw > 0.01) & (db > 0.01):# The stopping criteria is when w and b does not
     dj_b = 0
     for i in range(m):
         # Gradient descent method
+        #dj_w and dj_b are derivatives of j wrt w and b, respectively.
         dj_w= dj_w+ ((w * x_train[i] + b - y_train[i]) * x_train[i])/ m
         dj_b= dj_b+ (w * x_train[i] + b - y_train[i]) / m
     w_new = w - a * dj_w
